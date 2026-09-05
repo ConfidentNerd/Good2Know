@@ -1,0 +1,45 @@
+{
+  "name": "טוב לדעת",
+  "short_name": "טוב לדעת",
+  "description": "מדריכים ומידע שימושי.",
+  "lang": "he",
+  "dir": "rtl",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0F172A",
+  "background_color": "#F8FAFC",
+  "categories": ["utilities", "education"],
+  "icons": [
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-any-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "עמוד הבית",
+      "short_name": "בית",
+      "description": "פתיחת עמוד הבית של המערכת",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

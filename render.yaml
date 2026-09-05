@@ -1,0 +1,44 @@
+# Render Blueprint - https://render.com/docs/blueprint-spec
+#
+# One web service serves both halves of the app: the Vite build is compiled to
+# client/dist and handed to visitors by the same Hono server that answers /api.
+# Same origin means no CORS between front and back, and one free instance
+# instead of two.
+services:
+  - type: web
+    name: good2know
+    # Render's Node runtime ships Bun; BUN_VERSION below pins which one.
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+
+    buildCommand: |
+      set -e
+      cd client
+      bun install
+      bun run build
+      cd ../server
+      bun install
+
+    startCommand: cd server && bun run start
+
+    healthCheckPath: /api/public/categories
+
+    envVars:
+      - key: BUN_VERSION
+        value: 1.3.14
+      - key: NODE_ENV
+        value: production
+      # Restore server/seed over the database on every cold start, so each
+      # visitor gets the pristine demo. Set to false to keep changes.
+      - key: DEMO_RESET
+        value: "true"
+      # Set in the Render dashboard - never commit the connection string.
+      - key: MONGODB_URI
+        sync: false
+      # ALLOWED_ORIGINS is optional: the server already trusts
+      # RENDER_EXTERNAL_URL, which Render injects automatically. Set this only
+      # when you add a custom domain.
+      - key: ALLOWED_ORIGINS
+        sync: false

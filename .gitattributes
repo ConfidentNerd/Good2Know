@@ -1,0 +1,10 @@
+# normalise line endings so a windows checkout does not show every file as modified
+* text=auto
+
+# binary, never touch
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary

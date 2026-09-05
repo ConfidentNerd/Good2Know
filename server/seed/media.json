@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "bef11569-6d96-4eae-96d5-c4cacd743695",
+    "label": "g1.png",
+    "contentType": "image/png",
+    "size": 2266,
+    "uploadDate": "2026-09-05T18:11:15.530Z",
+    "file": "bef11569-6d96-4eae-96d5-c4cacd743695.png"
+  },
+  {
+    "_id": "e42d27c5-939b-4e0a-b29c-60f2b8ca3f40",
+    "label": "g2.png",
+    "contentType": "image/png",
+    "size": 1152,
+    "uploadDate": "2026-09-05T18:11:18.258Z",
+    "file": "e42d27c5-939b-4e0a-b29c-60f2b8ca3f40.png"
+  },
+  {
+    "_id": "4aff8429-5d37-4d35-a4ce-62e9047b8eb8",
+    "label": "g3.png",
+    "contentType": "image/png",
+    "size": 4299,
+    "uploadDate": "2026-09-05T18:11:21.062Z",
+    "file": "4aff8429-5d37-4d35-a4ce-62e9047b8eb8.png"
+  },
+  {
+    "_id": "6172a065-1484-4031-ad32-33a6cb6bc644",
+    "label": "uri.jpg",
+    "contentType": "image/jpeg",
+    "size": 382109,
+    "uploadDate": "2026-09-05T18:54:06.187Z",
+    "file": "6172a065-1484-4031-ad32-33a6cb6bc644.jpg"
+  },
+  {
+    "_id": "afd8a1d8-a641-45b8-9dcd-a8a92b1099ba",
+    "label": "image.png",
+    "contentType": "image/png",
+    "size": 1051,
+    "uploadDate": "2026-09-05T19:22:42.936Z",
+    "file": "afd8a1d8-a641-45b8-9dcd-a8a92b1099ba.png"
+  }
+]

@@ -1,0 +1,893 @@
+/* =========================================
+   BASE VARIABLES & RESET
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap');
+
+.content-html {
+    --bg-main: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --brand-dark: #001B44;
+    --brand-blue: #0072CE;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --glass-white: rgba(255, 255, 255, 0.8);
+    --border: #E2E8F0;
+    --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Heebo', sans-serif;
+    line-height: 1.6;
+}
+
+.content-html,
+.content-html * {
+    box-sizing: border-box;
+}
+
+.content-html {
+    margin: 0;
+    /* no padding reset here */
+}
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+.content-html .skip-link {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: var(--brand-dark);
+    color: white;
+    padding: 10px 15px;
+    z-index: 10000;
+    transition: top 0.2s;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom-left-radius: 8px;
+}
+
+.content-html .skip-link:focus {
+    top: 0;
+}
+
+.content-html *:focus-visible {
+    outline: 3px solid var(--brand-blue);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.content-html .site-header {
+    background: var(--glass-white);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.content-html .header-logo {
+    height: 64px;
+    width: auto;
+}
+
+.content-html .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 2rem;
+    transition: 0.2s;
+    font-size: 1.1rem;
+}
+
+.content-html .nav-links a:hover,
+.content-html .nav-links a.active,
+.content-html .nav-links a.focus-visible {
+    color: var(--brand-blue);
+}
+
+/* =========================================
+   HOME PAGE (HERO, VIDEO, CLUSTER, GRID)
+   ========================================= */
+.content-html .hero {
+    text-align: center;
+    padding: 5rem 1rem 3rem;
+    background: linear-gradient(180deg, #F1F5F9 0%, #FFFFFF 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.content-html .hero.post-video {
+    padding-top: 1rem;
+    background: none;
+}
+
+.content-html .hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--brand-dark);
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.content-html .hero p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.content-html .hero p a,
+.content-html .quick-start-list a {
+    color: #0560bc;
+    font-size: 0.9em;
+    font-style: italic;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.content-html .hero p a:hover,
+.content-html .quick-start-list a:hover {
+    text-decoration: underline;
+    color: var(--brand-dark);
+}
+
+.content-html .quick-start-list {
+    max-width: 700px;
+    width: fit-content;
+    margin: 1rem auto 0;
+    text-align: right;
+    list-style-position: inside;
+    color: var(--text-muted);
+    padding: 0;
+}
+
+.content-html .quick-start-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.content-html .video-section {
+    max-width: 768px;
+    margin: 0 auto 2rem;
+    padding: 0 1.5rem;
+}
+
+.content-html .video-title {
+    text-align: center;
+    color: var(--brand-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.content-html .video-section h3.video-title {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.content-html .video-container {
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+
+.content-html video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.content-html .cluster-section {
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.content-html .cluster-section h3 {
+    text-align: center;
+    color: var(--brand-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.content-html .cluster-description {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.content-html .cluster-container {
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    overflow: hidden;
+}
+
+.content-html .cluster-diagram {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.content-html .cluster-container a {
+    display: block;
+    cursor: zoom-in;
+}
+
+.content-html .image-hint {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+}
+
+.content-html .content-block {
+    padding: 4rem 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.content-html .content-block.bg-alternate {
+    background-color: var(--bg-secondary);
+}
+
+.content-html .block-title {
+    text-align: center;
+    color: var(--brand-dark);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 3.5rem;
+}
+
+.content-html .homepage-intro-block {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.content-html .text-wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.content-html .text-wrapper p {
+    margin-bottom: 1rem;
+
+}
+
+.content-html .text-wrapper a {
+    color: #0560bc;
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    text-decoration-color: rgba(5, 96, 188, 0.35);
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.content-html .text-wrapper a:hover {
+    text-decoration: underline;
+    color: var(--brand-dark);
+    text-decoration-color: currentColor;
+}
+
+.content-html .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 4rem auto 3rem;
+    padding: 0 1.5rem;
+}
+
+.content-html .card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--brand-blue);
+    border-bottom: 2px solid var(--brand-blue);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.content-html .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 114, 206, 0.15);
+    border-color: var(--brand-blue);
+}
+
+.content-html .card-icon {
+    font-size: 2rem;
+    background: #F0F7FF;
+    color: var(--brand-blue);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin: 0 auto 1.5rem;
+}
+
+.content-html h2,
+.content-html h3 {
+    scroll-margin-top: 120px;
+}
+
+.content-html .card h3 {
+    font-size: 1.5rem;
+    color: var(--brand-dark);
+    margin-bottom: 0.75rem;
+}
+
+.content-html .card p {
+    color: var(--text-muted);
+}
+
+.content-html .bottom-text {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 4rem;
+    padding: 0 1.5rem;
+}
+
+/* =========================================
+   WYSIWYG CONTENT (Guides & Pages)
+   ========================================= */
+
+/* Typography exactly mapped from your original .guide-content */
+.content-html h1 {
+    color: var(--brand-dark);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 1rem;
+    font-weight: 600;
+}
+
+.content-html h2,
+.content-html h3,
+.content-html h4,
+.content-html h5,
+.content-html h6 {
+    color: var(--brand-dark);
+    margin: 2rem 0 1rem;
+    font-weight: 600;
+}
+
+.content-html h2 {
+    font-size: 1.75rem;
+}
+
+.content-html h3 {
+    font-size: 1.5rem;
+}
+
+.content-html h4 {
+    font-size: 1.25rem;
+}
+
+.content-html h5 {
+    font-size: 1rem;
+}
+
+.content-html h6 {
+    font-size: 0.9rem;
+}
+
+.content-html p {
+    margin-bottom: 1.25rem;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.content-html p a {
+    color: var(--brand-blue);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    text-decoration-color: rgba(0, 114, 206, 0.35);
+    font-weight: 600;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.content-html p a:hover {
+    color: var(--brand-dark);
+    text-decoration-color: currentColor;
+}
+
+.content-html img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border);
+}
+
+.content-html ul,
+.content-html ol {
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.content-html li {
+    margin-bottom: 0.5rem;
+}
+
+/* Note Callouts */
+.content-html .note {
+    border-right: 4px solid var(--brand-blue);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 1.05rem;
+}
+
+/* Code Blocks mapped natively to pre/code */
+.content-html pre {
+    background: #1E293B;
+    color: #F8FAFC;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.content-html code {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+
+/* Interactive Dropdown mapped natively to details/summary */
+.content-html details {
+    background-color: #F8FAFC;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.content-html summary {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    color: var(--brand-blue);
+    user-select: none;
+    font-size: 1.1rem;
+}
+
+.content-html summary::-webkit-details-marker {
+    display: none;
+}
+
+.content-html summary::after {
+    content: '▼';
+    margin-right: auto;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
+}
+
+.content-html details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.content-html details> :not(summary) {
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+    padding-top: 1.5rem;
+}
+
+.content-html details p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   TABLE OF CONTENTS
+   ========================================= */
+.content-html .toc-note {
+    margin: 2.5rem 0;
+    border-right-width: 2px;
+}
+
+.content-html .toc-note h2 {
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1.4rem !important;
+    color: var(--brand-dark);
+    border-bottom: 1px solid rgba(0, 114, 206, 0.2) !important;
+    padding-bottom: 0.5rem;
+}
+
+.content-html .toc-list,
+.content-html .toc-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content-html .toc-list ul {
+    padding-right: 1.2rem;
+    margin: 0.4rem 0 0.8rem 0;
+    border-right: 2px solid rgba(0, 114, 206, 0.1);
+}
+
+.content-html .toc-list li {
+    margin-bottom: 0.6rem;
+}
+
+.content-html .toc-list a {
+    color: var(--brand-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.content-html .toc-list a:hover {
+    color: var(--brand-dark);
+    transform: translateX(-5px);
+    text-decoration: underline;
+}
+
+.content-html .toc-list ul a {
+    color: var(--text-main);
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   DASHBOARDS
+   ========================================= */
+.content-html .dashboard-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.content-html .dashboard-card h2 {
+    color: var(--brand-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.content-html .dashboard-card p {
+    color: var(--brand-dark);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.content-html .iframe-container {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    min-height: 400px;
+    max-height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.content-html .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.content-html .server-link {
+    color: var(--brand-blue);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.content-html .enlarge-dashboard-link {
+    margin-top: 10px;
+}
+
+.content-html .enlarge-dashboard-link p {
+    margin: 0;
+    padding: 0;
+}
+
+.content-html .enlarge-dashboard-link a.image-hint {
+    text-decoration: none;
+    color: #4a6b8c;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+}
+
+.content-html .enlarge-dashboard-link a.image-hint:hover {
+    opacity: 0.7;
+}
+
+/* =========================================
+   Additions
+   ========================================= */
+/* table borders */
+.content-html table {
+    border-collapse: collapse;
+    width: 100.04%;
+    height: 72px;
+    border: 1px solid black;
+}
+
+.content-html table td {
+    border: 1px solid black;
+}
+
+/* =========================================
+   OVERFLOW GUARDS
+   ========================================= */
+
+/* article html is author supplied, so stop any single element widening the page */
+.content-html {
+    overflow-wrap: break-word;
+}
+
+.content-html iframe,
+.content-html video {
+    max-width: 100%;
+}
+
+/* =========================================
+   RESPONSIVE (below tailwind's md breakpoint)
+   ========================================= */
+@media (max-width: 767.98px) {
+    .content-html .site-header {
+        padding: 0.5rem 1rem;
+    }
+
+    .content-html .header-logo {
+        height: 44px;
+    }
+
+    .content-html .nav-links a {
+        margin-left: 1rem;
+        font-size: 1rem;
+    }
+
+    .content-html .hero {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .content-html .hero h1 {
+        font-size: 2rem;
+        letter-spacing: -0.5px;
+    }
+
+    .content-html .hero p,
+    .content-html .text-wrapper,
+    .content-html .quick-start-list li {
+        font-size: 1.05rem;
+    }
+
+    .content-html .quick-start-list {
+        max-width: 100%;
+    }
+
+    .content-html .video-section,
+    .content-html .cluster-section,
+    .content-html .bottom-text {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .content-html .cluster-container {
+        padding: 1rem;
+    }
+
+    .content-html .content-block {
+        padding: 2.5rem 1rem;
+    }
+
+    .content-html .block-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    /* a 300px minimum column plus side padding does not fit a phone, so use one per row */
+    .content-html .grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin: 2.5rem auto 2rem;
+        padding: 0 1rem;
+    }
+
+    .content-html .card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .content-html .card h3 {
+        font-size: 1.25rem;
+    }
+
+    .content-html h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .content-html h2 {
+        font-size: 1.4rem;
+    }
+
+    .content-html h3 {
+        font-size: 1.2rem;
+    }
+
+    .content-html h4 {
+        font-size: 1.1rem;
+    }
+
+    .content-html h2,
+    .content-html h3,
+    .content-html h4,
+    .content-html h5,
+    .content-html h6 {
+        margin: 1.5rem 0 0.75rem;
+    }
+
+    /* the sticky header is shorter here, so anchors need less clearance */
+    .content-html h2,
+    .content-html h3 {
+        scroll-margin-top: 80px;
+    }
+
+    .content-html p {
+        font-size: 1rem;
+    }
+
+    .content-html ul,
+    .content-html ol {
+        margin-right: 1.1rem;
+    }
+
+    .content-html .note {
+        padding: 1rem 1.1rem;
+        margin: 1.5rem 0;
+        font-size: 1rem;
+    }
+
+    .content-html pre {
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .content-html summary {
+        padding: 0.9rem 1rem;
+        font-size: 1rem;
+    }
+
+    .content-html details> :not(summary) {
+        padding: 1rem 1rem 1.25rem;
+    }
+
+    .content-html .toc-note h2 {
+        font-size: 1.2rem !important;
+    }
+
+    .content-html .toc-list ul {
+        padding-right: 0.85rem;
+    }
+
+    .content-html .dashboard-card {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .content-html .dashboard-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .content-html .dashboard-card p {
+        font-size: 1rem;
+    }
+
+    /* the 400px floor stretches the 2 / 1 box on a phone, let the ratio decide instead */
+    .content-html .iframe-container {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+
+    /* a wide table scrolls inside itself rather than widening the whole article */
+    .content-html table {
+        display: block;
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+    }
+
+    .content-html table td,
+    .content-html table th {
+        min-width: 7rem;
+    }
+}
+
+/* =========================================
+   RESPONSIVE (phones)
+   ========================================= */
+@media (max-width: 480px) {
+    .content-html .hero {
+        padding: 2rem 0.9rem 1.5rem;
+    }
+
+    .content-html .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .content-html .block-title {
+        font-size: 1.4rem;
+    }
+
+    .content-html h1 {
+        font-size: 1.5rem;
+    }
+
+    .content-html h2 {
+        font-size: 1.25rem;
+    }
+
+    .content-html .content-block {
+        padding: 2rem 0.9rem;
+    }
+
+    .content-html .video-section,
+    .content-html .cluster-section,
+    .content-html .grid,
+    .content-html .bottom-text {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }
+
+    .content-html .card {
+        padding: 1.5rem 1rem;
+    }
+
+    .content-html .card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+}

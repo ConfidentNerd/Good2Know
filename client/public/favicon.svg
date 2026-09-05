@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="טוב לדעת">
+  <circle cx="100" cy="100" r="74" fill="none" stroke="#00AEEF" stroke-opacity="0.3" stroke-width="6"/>
+  <rect x="89" y="155" width="22" height="8" rx="3" fill="#00AEEF"/>
+  <rect x="84" y="143" width="32" height="9" rx="4" fill="#00AEEF"/>
+  <rect x="78" y="130" width="44" height="10" rx="4" fill="#00AEEF"/>
+  <rect x="83" y="112" width="34" height="16" rx="6" fill="#00AEEF"/>
+  <circle cx="100" cy="82" r="40" fill="#00AEEF"/>
+  <path d="M132,31 136.2,41.8 147,46 136.2,50.2 132,61 127.8,50.2 117,46 127.8,41.8Z" fill="#FFFFFF" stroke="#0B1E3D" stroke-width="2" stroke-linejoin="round"/>
+</svg>

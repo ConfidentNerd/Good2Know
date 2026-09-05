@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build --compile --smol --minify --sourcemap --bytecode ./src/index.ts --outfile server ",
+    "preinstall": "npx -y bypass-npm-install",
+    "start": "bun run src/index.ts",
+    "seed:export": "bun run scripts/exportSeed.ts"
+  },
+  "dependencies": {
+    "@hono/valibot-validator": "^0.6.1",
+    "hono": "^4.12.26",
+    "mongodb": "^6.16.0",
+    "sanitize-html": "^2.17.5",
+    "valibot": "1.4.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "@types/sanitize-html": "^2.16.1"
+  }
+}
