@@ -15,11 +15,14 @@ services:
 
     buildCommand: |
       set -e
-      cd client
+      # server first: the client imports CategoryMeta from ../server/models,
+      # so `tsc -b` walks into it and needs the server's mongodb types present
+      # before the client build runs.
+      cd server
+      bun install
+      cd ../client
       bun install
       bun run build
-      cd ../server
-      bun install
 
     startCommand: cd server && bun run start
 
