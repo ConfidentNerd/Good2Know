@@ -2,10 +2,12 @@
 
 *A self-service knowledge base / mini-CMS, built from scratch.*
 
-**🔗 Live demo:** _add your deployed URL here_
+**🔗 Live demo:** [good2know.onrender.com](https://good2know.onrender.com/)
 **🛠️ Admin panel:** _same URL_ + `/management` — wide open on purpose so you could play around with it.
 
-> The live site's content and UI are in Hebrew (RTL) — it was built for a Hebrew-speaking audience. Everything else, including this README, is in English.
+> Heads up: the first load can take a minute to spin up — it's hosted on Render's free tier, which spins down after 15 minutes of inactivity. Hang tight, it's worth the wait. 
+
+The live site's content and UI are in Hebrew (RTL) — it was built for a Hebrew-speaking audience. Everything else, including this README, is in English.
 
 ## Why I built this
 
@@ -46,6 +48,8 @@ It's a modern MERN-alternative: Mongo and React stick around, while Bun and Hono
 ## Try it yourself — the admin panel is wide open
 
 Since this is a portfolio project, `/management` isn't locked behind a login — go create a category, write a page, throw some HTML at it, upload an image, whatever you like. (In a real production app this would obviously sit behind auth.)
+
+The server also resets its data from a seed on every spin-up, so nothing you do can actually break it — feel free to go wild.
 
 ## Running it locally
 
