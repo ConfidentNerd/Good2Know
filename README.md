@@ -9,6 +9,14 @@
 
 The live site's content and UI are in Hebrew (RTL) — it was built for a Hebrew-speaking audience. Everything else, including this README, is in English.
 
+## Demo
+
+<p style="text-align:center">
+  <img src="docs/demo.gif" alt="Creating a page in the admin panel and viewing it live on the site" width="800" />
+</p>
+
+*Homepage → admin panel → create a page → write content → save → live on the site, straight from the sidebar.*
+
 ## Why I built this
 
 I wanted a place to publish guides and reference docs without dragging in a full CMS like WordPress, or paying for something like Wix. So I built the smallest version of that idea myself: an admin panel where you write a page with a normal rich-text editor, hit save, and it's live — no HTML knowledge required. But if you *do* want to hand-write markup or drop in a YouTube embed, you can do that too.
