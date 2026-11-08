@@ -1,0 +1,45 @@
+# Atlas pauses free (M0) clusters after 30 days with no connections.
+# This connects once a week so the cluster never goes idle long enough.
+#
+# Needs a repository secret named MONGODB_URI (same connection string as on
+# Render), and Atlas Network Access must allow GitHub's runners (0.0.0.0/0).
+name: MongoDB keep-alive
+
+on:
+  schedule:
+    - cron: "17 9 * * 1" # Mondays 09:17 UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install driver
+        run: npm install --no-save --no-audit --no-fund mongodb@6
+
+      - name: Ping cluster
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+        run: |
+          if [ -z "$MONGODB_URI" ]; then
+            echo "::error::MONGODB_URI secret is not set"
+            exit 1
+          fi
+          node -e '
+            const { MongoClient } = require("mongodb");
+            (async () => {
+              const client = new MongoClient(process.env.MONGODB_URI, { serverSelectionTimeoutMS: 20000 });
+              await client.connect();
+              const res = await client.db("admin").command({ ping: 1 });
+              console.log("ping ok:", JSON.stringify(res));
+              await client.close();
+            })().catch((err) => {
+              console.error("ping failed:", err.message);
+              process.exit(1);
+            });
+          '
